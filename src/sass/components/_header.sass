@@ -1,0 +1,44 @@
+.header
+    z-index: 1
+    position: absolute
+    width: 100%
+    left: 0
+    top: 0
+    padding: 23px 0
+    &-body
+        display: flex
+        align-items: center
+        &__logo
+            .logo
+                display: block
+                img
+        &__search
+            margin-right: auto
+            position: relative
+            margin-left: 27px
+            &:after
+                position: absolute
+                content: ""
+                height: 100%
+                width: 1px
+                left: 0
+                top: 0
+                background-color: rgba(255, 255, 255, 0.3)
+            .search
+                background: none
+                border: none
+                padding: 5px 15px
+                +rfs(16px)
+                color: rgba(255, 255, 255, 0.3)
+        &__nav
+.header-nav
+    display: flex
+    align-items: center
+    justify-content: space-between
+    &__item
+        a
+            +rfs(16px)
+            letter-spacing: 0.7px
+            color: #ffffff
+            text-decoration: none
+            padding: 5px 10px

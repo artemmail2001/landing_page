@@ -1,0 +1,433 @@
+.intro
+    overflow: hidden
+    &-list
+        position: relative
+        .flickity-page-dots
+            position: absolute
+            top: 50%
+            right: 5vw
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: space-between
+            transform: translateY(-50%)
+            .dot
+                display: inline-block
+                width: 15px
+                height: 15px
+                border: 1px solid #ffffff
+                border-radius: 50%
+                margin-bottom: 15px
+                &:last-child
+                    margin-bottom: 0
+                &:hover
+                    cursor: pointer
+                &.is-selected
+                    background: #ffffff
+        &__item
+.intro-item
+    width: 100vw
+    height: 100vh
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: flex-end
+    overflow: hidden
+    box-sizing: border-box
+    position: relative
+    &__bg
+        height: 100vh
+        width: 100vw
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+        object-fit: cover
+        z-index: -1
+    &__title
+        +rfs(62px)
+        font-weight: normal
+        text-align: center
+        color: #ffffff
+        margin-bottom: 15px
+        span
+            font-weight: bold
+    &__text
+        opacity: 0.9
+        +rfs(48px)
+        text-align: center
+        color: rgba(255, 255, 255, 0.9)
+        margin-bottom: 22px
+        span
+            color: rgba(15, 235, 158, 0.9)
+    &__small
+        margin-bottom: 20px
+        opacity: 0.9
+        +rfs(18px)
+        text-align: center
+        color: rgba(255, 255, 255, 0.9)
+        position: relative
+        &:after,
+        &:before
+            position: absolute
+            content: ''
+            width: 28px
+            height: 1px
+            top: 50%
+            transform: translateY(-50%)
+            background-color: #0feb9e
+        &:after
+            left: 110%
+        &:before
+            right: 110%
+    &__social
+        margin-bottom: 10%
+.intro-social
+    display: flex
+    align-items: center
+    &__item
+        margin-right: 10px
+        &:last-child
+            margin-right: 0
+        a
+            display: block
+            img
+                width: 50px
+                height: 50px
+.features
+    padding: 77px 0 150px 0
+    &_body
+        &__title
+        &__item
+.features-items
+    align-items: center
+    display: flex
+    justify-content: space-between
+    position: relative
+    .flickity-page-dots
+        position: absolute
+        bottom: -50px
+        left: 50%
+        display: flex
+        justify-content: space-between
+        transform: translateX(-50%)
+        .dot
+            display: inline-block
+            width: 10px
+            height: 10px
+            border: 1px solid #000000
+            border-radius: 50%
+            margin-right: 15px
+            &:last-child
+                margin-right: 0
+            &:hover
+                cursor: pointer
+            &.is-selected
+                background: #062033
+    &__feat
+        width: 30%
+.features-feat
+    box-sizing: border-box
+    padding-left: 50px
+    position: relative
+    &__logo
+        position: absolute
+        left: 0
+        top: 0
+    &__title
+        +rfs(20px)
+        font-weight: 600
+        color: #062033
+        margin-bottom: 15px
+    &__text
+        opacity: 0.7
+        +rfs(13px)
+        line-height: 1.62
+        color: rgba(6, 32, 51, 0.7)
+.works
+    &-body
+        &__title
+        &__text
+            margin-bottom: 30px
+        &__gallery
+.works-gallery
+    &__nav
+        margin-bottom: 20px
+    &__grid
+.works-nav
+    display: flex
+    justify-content: center
+    align-items: center
+    text-align: center
+    &__button
+        +rfs(14px)
+        font-weight: bold
+        text-align: center
+        color: #062033
+        border: none
+        background: none
+        margin-right: 15px
+        &:last-child
+            margin-right: 0
+        &.active
+            background-color: #0eb493
+            color: #ffffff
+            border-radius: 4px
+.works-grids
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    &__item
+        width: calc(100%/4)
+        &:hover
+            .works-hover
+                opacity: 0.8
+.works-grid
+    position: relative
+    &__img
+        display: inline-block
+        width: 100%
+        height: auto
+    &__hover
+        position: absolute
+        width: 100%
+        height: 100%
+        left: 0
+        top: 0
+
+.works-hover
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    padding: 20px
+    background-color: #0eb493
+    opacity: 0
+    transition: all .4s
+    &__logo
+        margin-bottom: 30px
+    &__title
+        +rfs(18px)
+        font-weight: bold
+        line-height: 1.33
+        text-align: center
+        color: #ffffff
+        margin-bottom: 10px
+    &__text
+        +rfs(14px)
+        line-height: 1.33
+        text-align: center
+        color: #ffffff
+.team
+    padding: 50px 0 150px 0
+    &-body
+        &__title
+        &__description
+            margin-bottom: 30px
+        &__people
+.team-people
+    position: relative
+    display: flex
+    justify-content: space-between
+    &__item
+        width: 22%
+        &:hover
+            .team-item__hover
+                opacity: 0.8
+    .flickity-page-dots
+        position: absolute
+        bottom: -50px
+        left: 50%
+        display: flex
+        justify-content: space-between
+        transform: translateX(-50%)
+        .dot
+            display: inline-block
+            width: 10px
+            height: 10px
+            border: 1px solid #000000
+            border-radius: 50%
+            margin-right: 15px
+            &:last-child
+                margin-right: 0
+            &:hover
+                cursor: pointer
+            &.is-selected
+                background: #062033
+.team-item
+    text-align: center
+    position: relative
+    &__block
+        position: relative
+        margin-bottom: 15px
+    &__img
+        display: inline-block
+        max-width: 100%
+        height: auto
+    &__hover
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        position: absolute
+        width: 100%
+        height: 100%
+        left: 0
+        top: 0
+        padding: 23px
+        transition: all .4s
+        background-color: #0eb493
+        opacity: 0
+    &__name
+        +rfs(18px)
+        font-weight: 600
+        line-height: 1.33
+        color: #062033
+        text-align: center
+
+    &__position
+        +rfs(13px)
+        line-height: 1.85
+        text-align: center
+.team-hover
+    text-align: center
+    &__title
+        +rfs(16px)
+        line-height: 1.5
+        color: #ffffff
+        font-weight: bold
+        margin-bottom: 10px
+    &__info
+        +rfs(16px)
+        line-height: 1.5
+        margin-bottom: 10px
+        color: #ffffff
+    &__socials
+        display: flex
+        justify-content: center
+        width: 100%
+.team-socials
+    &__link
+        margin-right: 5px
+        width: 42px
+        height: 42px
+        &:last-child
+            margin-right: 0
+        a
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 100%
+            height: 100%
+            background-color: rgba(0, 0, 0, 0.3)
+            img
+                display: inline-block
+                width: 40px
+                height: 40px
+.facts
+    background: url("../img/bg_fan.jpg") 0 0 no-repeat
+    background-size: cover
+    padding: 77px 0 50px 0
+    &-body
+        &__title
+        &__item
+.fact-item
+    display: flex
+    justify-content: space-between
+    align-items: stretch
+    &__fun
+        width: 20%
+        text-align: center
+.fact-fun
+    &__img
+        display: inline-flex
+        align-items: center
+        justify-content: space-around
+        width: 130px
+        height: 130px
+        border: 1px solid #ffffff
+        border-radius: 50%
+        margin-bottom: 15px
+        img
+    &__number
+        +rfs(60px)
+        font-weight: 600
+        text-align: center
+        color: #ffffff
+        margin-bottom: 10px
+    &__text
+        +rfs(18px)
+        text-align: center
+        color: #ffffff
+.discuss
+    padding: 77px 0
+    &-body
+        &__title
+        &__text
+            margin-bottom: 50px
+        &__content
+.discuss-content
+    display: flex
+    justify-content: space-between
+    align-items: stretch
+    &__address
+    &__form
+    &__socials
+.discuss-address
+    +rfs(13px)
+    line-height: 1.45
+    color: #062033
+    width: 245px
+    margin-right: 30px
+    &__title
+        +rfs(22px)
+        text-align: left
+        color: #000000
+        margin-bottom: 10px
+    a
+        text-decoration: none
+        color: #6e737b
+        display: block
+.discuss-form
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    font-style: normal
+    &__title
+        +rfs(24px)
+        font-weight: bold
+        text-align: left
+        color: #062033
+    &__input
+        border: none
+        border-bottom: 1px solid #6e737b
+        +rfs(13px)
+        margin_bottom: 15px
+    &__btn
+        background: none
+        border: none
+        margin-left: auto
+        +rfs(16px)
+        text-align: left
+        color: #000000
+        line-height: 1.5
+        display: inline-flex
+        align-items: center
+        img
+            display: inline-block
+            margin-right: 10px
+.discuss-socials
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+    &__link
+        margin-left: 10px
+        margin-bottom: 5px
+        &:last-child
+            margin-bottom: 0
+        a
+            display: block
+            img
+                width: 25px
+                height: 25px
