@@ -1,0 +1,11 @@
+@mixin r($class)
+    @if $class == xxs
+        @media(max-width: 481px) { @content; }
+    @else if $class == xs
+        @media(max-width: 575px) { @content; }
+    @else if $class == sm
+        @media(max-width: 767px) { @content; }
+    @else if $class == lg
+        @media(max-width: 991px) { @content; }
+    @else if $class == xl
+        @media(max-width: 1200px) { @content; }

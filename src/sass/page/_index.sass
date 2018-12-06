@@ -1,3 +1,6 @@
+@import bin/mixins
+.home
+    overflow: hidden
 .intro
     overflow: hidden
     &-list
@@ -11,6 +14,12 @@
             align-items: center
             justify-content: space-between
             transform: translateY(-50%)
+            @include r(sm)
+                flex-direction: row
+                top: 90%
+                left: 50%
+                justify-content: center
+                transform: translateX(-50%)
             .dot
                 display: inline-block
                 width: 15px
@@ -18,8 +27,13 @@
                 border: 1px solid #ffffff
                 border-radius: 50%
                 margin-bottom: 15px
+                @include r(sm)
+                    margin-bottom: 0
+                    margin-right: 15px
                 &:last-child
                     margin-bottom: 0
+                    @include r(sm)
+                        margin-right: 0
                 &:hover
                     cursor: pointer
                 &.is-selected
@@ -35,6 +49,9 @@
     overflow: hidden
     box-sizing: border-box
     position: relative
+    padding-bottom: 5vh
+    @include r(sm)
+        padding-bottom: 10vh
     &__bg
         height: 100vh
         width: 100vw
@@ -95,7 +112,7 @@
                 width: 50px
                 height: 50px
 .features
-    padding: 77px 0 150px 0
+    padding: 77px 0 100px 0
     &_body
         &__title
         &__item
@@ -104,6 +121,8 @@
     display: flex
     justify-content: space-between
     position: relative
+    @include r(xxs)
+        flex-direction: column
     .flickity-page-dots
         position: absolute
         bottom: -50px
@@ -126,7 +145,13 @@
                 background: #062033
     &__feat
         width: 30%
+        @include r(sm)
+            width: 48%
+        @include r(xs)
+            width: 100%
 .features-feat
+    @include r(xxs)
+        margin-bottom: 10px
     box-sizing: border-box
     padding-left: 50px
     position: relative
@@ -148,6 +173,7 @@
     &-body
         &__title
         &__text
+            text-align: center
             margin-bottom: 30px
         &__gallery
 .works-gallery
@@ -157,6 +183,7 @@
 .works-nav
     display: flex
     justify-content: center
+    flex-wrap: wrap
     align-items: center
     text-align: center
     &__button
@@ -173,17 +200,31 @@
             background-color: #0eb493
             color: #ffffff
             border-radius: 4px
+        @include r(sm)
+            margin-bottom: 10px
+            margin-right: 10px
+        @include r(xxs)
+            margin-bottom: 10px
+            margin-right: -10px
 .works-grids
     display: flex
     justify-content: space-between
     flex-wrap: wrap
     &__item
         width: calc(100%/4)
+        @include r(lg)
+            width: calc(100%/3)
+        @include r(sm)
+            width: calc(100%/2)
+        @include r(xxs)
+            width: calc(100%/1)
+            align-items: center
         &:hover
             .works-hover
                 opacity: 0.8
 .works-grid
     position: relative
+    line-height: 0
     &__img
         display: inline-block
         width: 100%
@@ -223,6 +264,7 @@
     &-body
         &__title
         &__description
+            text-align: center
             margin-bottom: 30px
         &__people
 .team-people
@@ -231,9 +273,12 @@
     justify-content: space-between
     &__item
         width: 22%
-        &:hover
-            .team-item__hover
-                opacity: 0.8
+        @include r(lg)
+            width: 30%
+        @include r(sm)
+            width: 48%
+        @include r(xs)
+            width: 100%
     .flickity-page-dots
         position: absolute
         bottom: -50px
@@ -257,7 +302,11 @@
 .team-item
     text-align: center
     position: relative
+    &:hover
+        .team-item__hover
+            opacity: 0.8
     &__block
+        line-height: 0
         position: relative
         margin-bottom: 15px
     &__img
@@ -297,20 +346,47 @@
         color: #ffffff
         font-weight: bold
         margin-bottom: 10px
+        @include r(lg)
+            +rfs(12px)
+        @include r(sm)
+            +rfs(12px)
+        @include r(xs)
+            +rfs(9px)
     &__info
         +rfs(16px)
         line-height: 1.5
         margin-bottom: 10px
         color: #ffffff
+        @include r(lg)
+            +rfs(12px)
+        @include r(sm)
+            +rfs(9px)
+        @include r(xs)
+            +rfs(9px)
     &__socials
         display: flex
         justify-content: center
         width: 100%
+        @include r(lg)
+            width: 30%
+        @include r(sm)
+            width: 48%
+        @include r(xs)
+            width: 100%
 .team-socials
     &__link
         margin-right: 5px
         width: 42px
         height: 42px
+        @include r(lg)
+            width: 32px
+            height: 32px
+        @include r(sm)
+            width: 22px
+            height: 22px
+        @include r(xs)
+            width: 12px
+            height: 12px
         &:last-child
             margin-right: 0
         a
@@ -324,10 +400,21 @@
                 display: inline-block
                 width: 40px
                 height: 40px
+                @include r(lg)
+                    width: 30px
+                    height: 30px
+                @include r(sm)
+                    width: 20px
+                    height: 20px
+                @include r(xs)
+                    width: 10px
+                    height: 10px
 .facts
     background: url("../img/bg_fan.jpg") 0 0 no-repeat
     background-size: cover
     padding: 77px 0 50px 0
+    @include r(xs)
+        padding: 100px 0 50px 0
     &-body
         &__title
         &__item
@@ -335,9 +422,14 @@
     display: flex
     justify-content: space-between
     align-items: stretch
+    @include r(xs)
+        flex-wrap: wrap
     &__fun
         width: 20%
         text-align: center
+        @include r(xs)
+            width: 48%
+            margin-bottom: 50px
 .fact-fun
     &__img
         display: inline-flex
@@ -348,6 +440,9 @@
         border: 1px solid #ffffff
         border-radius: 50%
         margin-bottom: 15px
+        @include r(sm)
+            width: 100px
+            height: 100px
         img
     &__number
         +rfs(60px)
@@ -364,12 +459,15 @@
     &-body
         &__title
         &__text
-            margin-bottom: 50px
+            text-align: center
+            margin-bottom: 30px
         &__content
 .discuss-content
     display: flex
     justify-content: space-between
     align-items: stretch
+    @include r(sm)
+        flex-wrap: wrap
     &__address
     &__form
     &__socials
@@ -379,11 +477,18 @@
     color: #062033
     width: 245px
     margin-right: 30px
+    @include r(sm)
+        order: 2
+        width: 100%
+        text-align: center
+        margin-right: 0
     &__title
         +rfs(22px)
         text-align: left
         color: #000000
         margin-bottom: 10px
+        @include r(sm)
+            text-align: center
     a
         text-decoration: none
         color: #6e737b
@@ -393,16 +498,28 @@
     justify-content: space-between
     flex-wrap: wrap
     font-style: normal
+    @include r(sm)
+        order: 0
+        width: 100%
+        margin-bottom: 40px
     &__title
         +rfs(24px)
         font-weight: bold
         text-align: left
         color: #062033
+        @include r(sm)
+            text-align: center
+            margin-bottom: 20px
     &__input
         border: none
         border-bottom: 1px solid #6e737b
         +rfs(13px)
-        margin_bottom: 15px
+        margin-bottom: 15px
+        @include r(xs)
+            width: 100%
+            text-align: center
+            padding: 10px 15px
+
     &__btn
         background: none
         border: none
@@ -413,6 +530,8 @@
         line-height: 1.5
         display: inline-flex
         align-items: center
+        @include r(xs)
+            margin: auto
         img
             display: inline-block
             margin-right: 10px
@@ -421,11 +540,22 @@
     flex-direction: column
     justify-content: space-between
     align-items: center
+    @include r(sm)
+        order: 1
+        width: 100%
+        flex-direction: row
+        justify-content: center
+        margin-bottom: 40px
+        margin-left: 0
     &__link
+        @include r(sm)
+            margin-bottom: 0
+            margin-right: 20px
         margin-left: 10px
         margin-bottom: 5px
         &:last-child
             margin-bottom: 0
+            margin-right: 0
         a
             display: block
             img

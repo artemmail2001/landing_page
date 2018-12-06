@@ -1,5 +1,6 @@
+@import bin/mixins
 .header
-    z-index: 1
+    z-index: 2
     position: absolute
     width: 100%
     left: 0
@@ -8,6 +9,8 @@
     &-body
         display: flex
         align-items: center
+        @include r(sm)
+            flex-wrap: wrap
         &__logo
             .logo
                 display: block
@@ -15,7 +18,7 @@
         &__search
             margin-right: auto
             position: relative
-            margin-left: 27px
+            margin-left: 10px
             &:after
                 position: absolute
                 content: ""
@@ -30,11 +33,22 @@
                 padding: 5px 15px
                 +rfs(16px)
                 color: rgba(255, 255, 255, 0.3)
+                @include r(sm)
+                    width: 100px
         &__nav
+            @include r(sm)
+                width: 100%
+                overflow: hidden
+                transition: all .4s
+                max-height: 0
 .header-nav
     display: flex
     align-items: center
     justify-content: space-between
+    @include r(sm)
+        flex-direction: column
+        height: 80vh
+        padding: 10vh 0
     &__item
         a
             +rfs(16px)
@@ -42,3 +56,53 @@
             color: #ffffff
             text-decoration: none
             padding: 5px 10px
+            @include r(sm)
+                color: #0eb493
+                +rfs(40px)
+.header-burger
+    background: none
+    border: none
+    display: none
+    flex-direction: column
+    justify-content: space-between
+    width: 10%
+    height: 18px
+    position: relative
+    align-items: center
+    transition: all .4s
+    @include r(sm)
+        display: flex
+    &__line
+        display: inline-block
+        width: 30px
+        height: 2px
+        background: #ffffff
+        border-radius: 3px
+.mask
+    display: inline-block
+    position: fixed
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    z-index: 1
+    background: #ffffff
+    transition: all .4s
+    opacity: 0
+    transform: translateY(-100%)
+    &.is-active
+        transform: translateY(0%)
+        opacity: 0.95
+.header-body.is-active
+    .header-body__search
+        input
+            @include r(sm)
+                color: #0eb493
+                border: 1px solid #0eb493
+                border-radius: 3px
+    .header-body__nav
+        @include r(sm)
+            max-height: 100%
+    .header-burger
+        .header-burger__line
+            background: #0eb493
